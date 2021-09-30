@@ -1,0 +1,23 @@
+{
+  "apps": [
+    {
+      "name": "main-backend",
+      "exec_mode": "fork",
+      "instances": "1",
+      "script": "./build/main.js",
+      "autorestart": true,
+      "listen_timeout": 15000,
+      "env": {
+        "ENV": "prod"
+      }
+    },
+    {
+      "name": "indexer",
+      "exec_mode": "fork",
+      "instances": "1",
+      "script": "./build/server/indexer.js",
+      "autorestart": true,
+      "listen_timeout": 15000
+    }
+  ]
+}
